@@ -1,0 +1,1423 @@
+/* общие свойства*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-dark);
+    color: var(--color-white); 
+    margin: 0;   
+}
+
+
+/*main colors*/
+:root {
+    --color-dark: #353535;
+    --color-white: #EFEFEF;
+    --color-grey: #A8A2A2;
+    --color-green: #2B4E50;
+    --color-light: #61B4B9;    
+}
+
+/* layout */
+.container {
+    width: 1140px;
+    margin: 0 auto;   
+}
+
+.padding-left {
+    padding-left: 30px;
+}
+
+.section-padding {
+    padding-top: 50px;
+    padding-bottom: 120px;
+}
+
+.section-margin {
+    margin-bottom: 130px;
+}
+
+/* font-size for title */
+.title {
+    margin-top: -15px;
+    margin-bottom: -5px;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 73px;
+    height: 78;
+    width: 234px;
+    border-bottom: #353535 3px solid;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 0;
+    padding: 0 0 50px;  /*отступ снизу*/
+}
+.page-header__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 0;
+}
+
+.section-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.section-subtitle-big {            /*********************НАДО ЛИ?*********************************/
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+/*font-size for text*/
+.small-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.small-text--grey {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #A8A2A2;
+}
+
+.medium-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.big-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-ai-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-sb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-column-ai-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* clear */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;   
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+/* button */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    border: 1px solid var(--color-grey);  
+    border-radius: 2px;
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn--primary {
+    background-color: var(--color-green);
+}
+
+.btn--secondary {
+    background-color: #A55816;
+}
+
+.btn--primary:hover {
+    border: 1px solid var(--color-white);
+}
+
+.btn--secondary:hover {
+    border: 1px solid var(--color-white);
+}
+
+/* sidebar */
+.sidebar {
+    position: fixed;
+    max-width: 102px;
+    height: 100vh;
+    border-right: 1px solid var(--color-white);
+    background-color: var(--color-dark);
+}
+
+.sidebar__column {
+    flex-direction: column;
+
+
+}
+
+
+
+.sidebar__item a:hover {
+    fill: #30E3CA;
+    color: #30E3CA;
+    stroke: #30E3CA;
+    stroke-width: 1.5px;
+    transition: all .3s ease;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+}
+
+
+.sidebar__item a {
+    font-size: 14px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 1px;
+    stroke: #f0f7f6;
+    transition: stroke-width 1s, stroke-dashoffset 4s, stroke-dasharray 1s;
+}
+.sidebar__img {
+    margin-bottom: 5px;
+}
+
+/* hamburger*/
+.page-header__toggle {
+    display: none;
+} 
+
+.page-header__col-menu {
+    display: none;
+    z-index: 1;
+    border: var(--color-green) 2px solid;
+}
+
+.page-header__col-menu--border {
+    border: 1px var(--color-grey) solid;
+}
+  
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after,
+.hamburger.is-active .hamburger-inner, 
+.hamburger.is-active .hamburger-inner::before, 
+.hamburger.is-active .hamburger-inner::after {
+    background-color: var(--color-dark);
+    border-radius: 1.5px;
+}
+
+.page-header__toggle.is-active + .page-header__col-menu{
+    display: none;
+}
+
+.hamburger-inner_change-color,
+.hamburger-inner_change-color::before, 
+.hamburger-inner_change-color::after,
+.hamburger__change-color.is-active .hamburger-inner_change-color,
+.hamburger__change-color.is-active .hamburger-inner_change-color::before,
+.hamburger__change-colorv.is-active .hamburger-inner_change-color::after {
+    background-color: var(--color-white);
+
+}
+
+/* page-header */
+
+.page-header {
+    height: 616px;
+    color: var(--color-dark);
+}
+
+.main-menu {
+    padding: 10px;
+}
+
+.main-menu__item a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+.main-menu__item a img {
+    margin-right: 10px;
+}
+
+.page-header__main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 130px;
+}
+
+/* page-footer */
+.page-footer {
+    background-color: var(--color-green);
+}
+
+.page-footer__main {
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.page-footer__lk img {
+    margin-left: 6px;
+}
+
+.page-footer hr {                   /*................УБРАТЬ ПОТОМ....................*/
+    color: var(--color-white);
+}
+
+.page-footer_social {
+    margin-left: 35px;
+}
+
+.page-footer__bottom {
+    padding-top: 50px;
+    padding-bottom: 35px;
+}
+
+.social-list {
+    gap: 10px;
+    align-items: center;
+}
+
+.page-footer__mobile {
+    display: none;
+}
+.page-footer__bottom-mobile {
+    display: none;
+}
+.page-footer-line {
+    border-top: var(--color-white) 1px solid;
+}
+
+
+/* *** свойства для index.html *** */
+
+.page-header--index-banner {
+    background-image: url(../images/banner-index.png);
+}
+
+/* services */
+.services__banner { 
+    width: 560px; 
+    height: 786px; 
+}
+
+.services__column {
+    gap: 30px;
+}
+
+.service__item {
+    position: relative;
+    width: 520px;
+    height: 175px;
+    padding-left: 35px;
+    border: 1px solid var(--color-grey);
+}
+
+.service__item p {
+    width: 385px;
+}
+
+.service__item a {
+    position: absolute;
+    top: 140px;
+    gap: 10px;
+}
+
+.check:checked+::before {  
+    content: '';    
+    z-index: -1;  
+    position: absolute;  
+    top: 0; 
+    left: 0; 
+    width: 515px; 
+    height: 169px;   
+    border: 2px solid white;   
+  }
+
+.visually-hidden { 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+}
+
+/* events */
+.events {
+    background-color: var(--color-green);
+    padding-top: 130px;
+    height: 940px;
+}
+
+.events__info {
+    position: absolute;
+    left: 125px;
+    bottom: -135px;
+    width: 370px;
+    height: 262px;
+    padding: 0 25px; 
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-grey);
+}
+
+.events__data {
+    color: var(--color-grey);
+}
+
+.events__btn {
+    width: 150px;
+    margin-top: 50px;
+}
+
+.events__content {
+    column-gap: 25px;
+    justify-content: center;
+}
+
+/* ski-pass */
+.ski-pass__content p {
+    width: 410px;
+}
+
+.ski-pass__btn {
+    width: 275px;
+    margin-top: 20px;
+}
+
+/* feedback */
+.feedback__content {
+    width: 560px;
+    height: 467px;
+    padding: 30px;
+    border: 1px solid var(--color-grey);
+}
+
+.feedback-form__title {
+    margin-bottom: 40px;
+}
+
+.feedback-form__item {
+    width: 100%;
+    height: 45px;
+    padding: 10px 15px;
+    border: 1px solid var(--color-grey);
+    color: var(--color-white);
+    background-color: #4B4949; 
+}
+.feedback-form__item::placeholder {
+    color: var(--color-grey);
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+.feedback-form__item:focus {
+    border: 2px solid var(--color-white);
+    outline: none;
+  }
+.feedback-form__input {
+    margin-bottom: 15px;
+}
+
+  
+.feedback-form__item--textarea {
+    resize: none;
+    height: 75px;
+}
+
+.feedback-form__opposite {
+    gap: 15px;
+}
+
+.feedback-form__row-submit {
+    width: 473px;
+    height: 60px;
+}
+  
+.checkbox__text {
+    margin-left: 10px;
+    font-size: 12px;
+    width: 190px;
+}
+.checkbox__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+}
+.checkbox__input:checked + .checkbox__text::before {
+    background: var(--color-green) url('../images/icons/check.svg') no-repeat center center;
+}
+  
+.checkbox__input:focus-visible + .checkbox__text::before {
+    outline: 1px solid var(--color-white);
+}
+
+.checkbox__text {
+    padding-left: 40px;
+    display: block;
+    position: relative;
+}
+
+.checkbox__text::before {
+    content: '';
+    border: 1px solid #646464;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+    cursor: pointer;
+}
+    
+.feedback-form__btn {
+    width: 227px;
+    justify-content: center;
+}
+
+::placeholder {
+    color: var(--color-white);
+    font-size: 14px;
+}
+
+/* *** свойства для about.html *** */
+
+.page-header--about-banner {
+    background-image: url(../images/banner-about.png);
+}
+
+.about__item {
+    margin-bottom: 20px;
+    gap: 50px;
+    align-items: center;
+}
+
+.contacts {
+    background-color: var(--color-green);
+}
+
+.contacts__content {
+    width: 548px;
+    height: 450px;
+    border: 1px solid var(--color-grey);
+}
+
+.contacts__social {
+    color: #BFBABA;
+}
+
+.contacts__emal {
+    color: var(--color-white);
+}
+
+.contacts__social img {
+    margin-right: 10px;
+}
+
+/*rules*/
+.rules__content {
+    margin-top: 65px;
+}
+
+.rules__item {
+    width: 517px;
+    height: 174px;
+    padding-left: 34px;
+    border: 1px solid var(--color-grey);
+}
+.rules__img-mobile {
+    display: none;
+}
+.rules__img-mobile-small {
+    display: none;
+}
+
+.rules__item p {
+    width: 387px;
+}
+
+/* *** свойства для services.html *** */
+
+.page-header--services-banner {
+    background-image: url(../images/banner-services.png);
+}
+
+.page-services__btn {
+    width: 220px;
+    margin-top: 40px;
+}
+
+/* rent-property */
+.rent-property {
+    background-color: var(--color-green);
+}
+
+.property-text {
+    width: 510px;
+} 
+
+.property-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.property-gallery__item--big {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* rent-equipment */
+.equipment-text {
+    width: 510px;
+}
+
+/* ski-tours */
+.ski-tours {
+    background-color: var(--color-green);
+}
+
+.tours-text {
+    width: 524px;
+}
+
+.tours-gallery {
+    display: grid;
+    grid-template-columns: 276px 228px;   
+    row-gap: 30px;
+    column-gap: 24px;
+}
+
+.tours-gallery__item--big {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.tour-extreme__img {
+    width: 519px;
+    height: 668px;
+}
+.tour-extreme__img-adapted {
+    display: none;
+}
+
+/* services-instructors */
+.instructors-text {
+    width: 510px;
+}
+.services-instructors__content {
+    gap: 30px;
+}
+
+/* *** свойства для rent-equipment.html *** */
+
+.page-header--rent-equipment-banner {
+    background-image: url(../images/banner-rent-equipment.png);
+}
+
+.rent-equipment__content {
+    gap: 30px;
+}
+
+.equipment-benefits {
+    background-color: var(--color-green);
+}
+
+.equipment-price__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 100px;
+}
+
+.equipment-benefits__content p {
+    width: 490px;
+}
+
+.equipment-price__text {
+    width: 355px;
+    height: 130px;
+    margin-top: -4px;
+    padding-left: 10px;
+    border: 1px solid var(--color-grey);
+}
+
+.equipment-price__line {
+    margin: 0;
+    width: 120px;
+    height: 1px;
+    border: 1px solid #AEAEAE;
+}
+
+.equipment-price__text p {
+    color: #D6D6D6;
+}
+
+.equipment-price__descr {
+    width: 494px;
+}
+
+/* *** свойства для instructors.html *** */
+
+.page-header--instructors-banner {
+    background-image: url(../images/banner-instructors.png);
+}
+
+.instructors-benefits__content p {
+    width: 450px;
+}
+
+.instructors-benefits__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.instructors-benefits__item--big {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.instructors-price {
+    background-color: var(--color-green);
+}
+
+.instructors-price__item {
+    position: relative;
+    width: 350px;
+    height: 620px;
+    padding: 0 15px;
+    border: 1px solid var(--color-grey);
+    background-color: var(--color-dark);
+}
+
+.instructors-price__btn {
+    position: absolute;
+    left: 80px;
+    bottom: 20px;
+    width: 150px;
+}
+
+.instructors__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 35px;
+    row-gap: 50px;
+}
+
+.instructors__item {
+    width: 340px;
+}
+
+.instructors__item p {
+    padding-right: 35px;
+}
+
+/* *** свойства для slopes.html *** */
+
+.page-header--slopes-banner {
+    background-image: url(../images/banner-slopes.png);
+}
+
+.slopes {
+    background-color: var(--color-green);
+}
+
+.slopes__info {
+    width: 500px;
+    margin-bottom: 50px;
+}
+
+.slopes__name {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    width: 550px;
+    height: 520px;
+    padding: 0px 30px 0px 30px;
+    border: 2px solid var(--color-grey);
+}
+
+.slopes__item {
+    width: 215px;
+}
+
+.slopes__item h3 {
+    margin-bottom: 0;
+}
+
+.slopes__text {
+    height: 170px;
+    color: #D6D6D6;
+}
+.slopes__img-mob {
+    display: none;
+}
+
+/* elevators */
+.elevators__block {
+    width: 540px;
+    height: 950px;
+}
+
+.elevators__item {
+    height: 780px;
+    padding: 60px;
+    border: 1px solid var(--color-grey);
+}
+
+.elevators__item p {
+    color: #D6D6D6;
+}
+
+.elevators__btn {
+    width: 260px;
+}
+
+/* *** свойства для events.html *** */
+.page-header--events-banner {
+    background-image: url(../images/banner-events.png);
+}
+
+.page-events__date {
+    color: #BFBABA;
+    font-size: 24px;
+}
+
+/* event-start */
+.event-start {
+    background-color: var(--color-green);
+}
+
+.event-start__adapted-img {
+    display: none;
+}
+
+.event-start h2 {
+    padding-bottom: 0;
+}
+
+.event-start__content {
+    position: relative; 
+}
+
+.event-start__block-content {
+    position: absolute;
+    right: 0;
+    width: 555px;
+    height: 600px;
+    padding: 20px 20px 0 25px;
+    border: 1px solid var(--color-grey);
+    background-color: var(--color-dark);
+}
+
+.event-start__list {
+    margin-left: 30px;
+}
+
+.event-start__list li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    list-style-image: url(../images/icons/list-marker.svg);
+}
+
+.event-start__btn {
+    width: 222px;
+    position: absolute;
+    top: 525px;
+}
+
+/* event-new-year */
+.event-new-year__text {
+    width: 444px;
+}
+
+.event-new-year__btn {
+    width: 222px;
+    margin-top: 80px;
+}
+
+.event-new-year__gallery {
+    display: grid;
+    grid-template-columns: 332px 255px;
+    gap: 20px;
+}
+
+.event-new-year__item--big {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* *** свойства для rent-house.html *** */
+
+.page-header--rent-house-banner {
+    background-image: url(../images/banner-rent-house.png);
+}
+
+.rent-house-benefits {
+    background-color: var(--color-green);
+}
+
+.rent-house-benefits__info {
+    width: 500px;
+}
+
+.rent-house-price__item {
+    margin-bottom: 100px;
+}
+
+.rent-house-price__info {
+    border: 1px solid var(--color-grey);
+    padding: 0px 80px 30px 30px;
+}
+
+.rent-house-price__btn {
+    width: 200px;
+}
+
+.rent-house-benefits__img-adapted {
+    display: none;
+}
+
+/* *** свойства для tours.html *** */
+.page-header--tours-banner {
+    background-image: url(../images/banner-tours.png);
+}
+
+.tours-active {
+    background-color: var(--color-green);
+}
+
+.tours-active__content p {
+    width: 495px;
+}
+.events__item {
+    position: relative;
+}
+
+/* faq */
+.faq-list {
+   width: 450px;
+}
+
+.faq-list__item:not(:last-child) { /*отступы между блоками*/
+    margin-bottom: 30px;
+}
+
+.faq-block {
+    border: 1px solid var(--color-grey); /* граница до нажатия (по умолчанию) */
+}
+
+.faq-block.is-open { /*граница после нажатия*/
+    border: 2px solid var(--color-white); 
+}
+
+.faq-block.is-open .faq-block__content {  
+    display: block; /*показываем скрытый блок контента по нажатию*/
+}
+  
+.faq-block.is-open .faq-block__toggle-icon {
+    transform: rotate(45deg);  /*поворачиваем + превращая его в х*/
+    transition: 0.3s;
+}
+
+.faq-block__toggle {
+    padding: 20px;
+}
+
+.faq-block__toggle-icon {  /*для иконки +*/
+    width: 32px;  /*задаём размеры блока, внутри которого с помощью bgc вставится и*/
+    height: 32px;                                        /* позиционируется иконка*/
+    background: url('../images/icons/plus.svg') no-repeat center center;
+    cursor: pointer;
+  }
+  
+.faq-block__content {  
+    display: none;   
+    margin: -25px 100px 20px 50px;
+    line-height: 130%;
+}
+
+.faq-block__content li {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.faq-list__markers li {
+
+    margin-top: 15px;
+    font-size: 14px;
+    list-style-type: none;
+    list-style-image: url(../images/icons/list-marker.svg);
+}
+
+.faq-block__content ol {
+    padding-left: 25px;
+}
+
+.tour-snowmobile__btn {
+    width: 260px;
+    margin-top: 50px;
+}
+
+.tour-snowmobile__img-adapted {
+    display: none;
+}
+
+.tour__gap {
+    gap: 20px;
+}
+
+.tour-winter-relax {
+    background-color: var(--color-green);
+}
+
+.tour-winter-relax__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 304px);
+    gap: 20px;
+    width: 628px;
+    height: 785px;
+}
+
+.tour-snowmobile__img {
+    width: 553px;
+    height: 670px;
+}
+
+
+/* *** свойства для 404.html *** */
+.page-header--404 {
+    width: 100%;
+    height: 50px;
+}
+
+/* .main-menu--404 {
+    color: var(--color-white);
+} */
+
+.page-404__title {
+    font-size: 100px;
+}
+
+.page-404__subtitle {
+    font-size: 30px;
+}
+
+.page-404__btn {
+    width: 220px;
+    margin-top: 50px;
+}
+
+.main-menu__item--change-color a {
+    color: var(--color-white);
+
+}
+
+
+/* Модальное окно */
+
+
+.feedback-form-modal__content {
+    max-width: 550px;
+    padding: 30px;
+    min-height: 400px;
+    margin: auto;
+    border-radius: 4px;
+    background-color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease 0s;
+    opacity: 0;
+    transform: translate(0px, -100%);
+}
+
+.feedback-form-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.4s ease 0s;
+}
+
+.feedback-form-modal:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.feedback-form-modal:target .feedback-form-modal__content {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.feedback-form-modal__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.feedback-form-modal__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+}
+
+.feedback-form-modal__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.feedback-form-modal__header h3 {
+    max-width: 400px;
+}
+
+.feedback-form-modal__content-sub {
+    height: 250px;
+    background: var(--color-dark);
+    padding: 30px;
+    position: relative;
+}
+
+/* Модальное окно для регистрации*/
+
+.popup-invite__link {
+    padding-top: 20px;
+}
+
+.popup-forget__link {
+    padding-top: 40px;
+}
+
+.checkbox__text--reg {
+    width: 70vw;
+}
+
+.feedback-form__row-submit--reg {
+    justify-content:flex-start ;
+}
+
+.feedback-form__btn--reg {
+    margin-top:20px;
+}
+
+/* Политика конфиденциальности */
+
+.privacy-policy ol {
+	list-style: none;
+	font-size: 16px;
+	padding: 0;
+	margin: 10px 0;
+}
+.privacy-policy li {
+	margin: 0;
+	padding: 0 0 10px 40px;
+	position: relative;
+	line-height: 20px;
+}
+ li::before {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 32px;
+	height: 32px;
+
+	text-align: center;
+	line-height: 32px;
+	font-size: 12px;
+	border-radius: 50%;
+}
+ 
+/* 1-й уровень */
+.privacy-policy {
+	counter-reset: num;
+}
+ol > li {
+	counter-increment: num;
+}
+ ol > li::before {
+	content: counter(num);
+    margin: -5px;
+
+}
+ 
+/* 2-й уровень */
+ol ol {
+	counter-reset: num2;
+}
+ol ol > li {
+	counter-increment: num2;
+}
+ol ol > li::before {
+	content: counter(num) '.' counter(num2);
+}
+ 
+/* 3-й уровень */
+ol ol ol {
+  counter-reset: num3;
+}
+ol ol ol > li {
+	counter-increment: num3;
+}
+ol ol ol > li::before {
+	content: counter(num) '.' counter(num2) '.' counter(num3);
+}
+
+
+/* *** page-LK *** */
+.account__info-box {
+    position: relative;
+    width: 1090px;
+    padding-bottom: 40px;
+    border: 1px solid #D6D6D6;
+}
+
+.account__avatar {
+    padding: 35px 50px 10px 10px;
+}
+
+.account__info-top {
+    display: flex;
+    margin-left: 25px;
+}
+
+.account__about-miself {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.account__about-miself--grey {
+    color: #A8A2A2;
+    margin-right: 10px;
+}
+
+.account__about-miself p{
+    margin-bottom: 0;
+}
+
+.account__about-miself:first-child {
+    white-space:nowrap
+}
+
+.account__edit {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 1px;
+    stroke: #f0f7f6;
+    transition: stroke-width 1s, stroke-dashoffset 4s, stroke-dasharray 1s;
+}
+
+.account__edit:hover {
+    fill: #30E3CA;
+    color: #30E3CA;
+    stroke: #30E3CA;
+    stroke-width: 1px;
+    transition: all .3s ease;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+}
+
+.account__name {
+    border-bottom: 1px solid white;
+    width: max-content;
+    font-size: 26px;
+}
+
+.account__item {
+    padding-top: 25px;
+    color: #A8A2A2;
+}
+
+.white-text {
+    color: white;
+}
+
+.account__ski-pass {
+    margin-top: 40px;
+    width: 1090px;
+    height: 370px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #D6D6D6;
+}
+.hide-title {
+    display: none;
+}
+.account__ski-pass-left {
+    margin-left: 35px;
+}
+
+.account_ski-pass-loss{
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.account_ski-pass-loss p {
+    width: 240px;
+}
+
+.account__pass-btn {
+    width: 220px;
+}
+
+.loss-btn {
+    width: 220px;
+}
+
+.tiny-text--grey {
+    color: #A8A2A2;
+    font-size: 12px; 
+    line-height: 130%;
+}
+
+.account__ski-pass-right {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-right: 35px;
+    /* padding-top: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.account__balance {
+    color: #A8A2A2;
+}
+
+.account__ski-pass-right--bold {
+    color: white;
+    font-weight: 600;
+}
+
+.account__booking {
+    margin-top: 40px;
+    width: 1090px;
+    padding-bottom: 40px;
+    border: 1px solid #D6D6D6;
+    padding-left: 35px;
+    margin-bottom: 120px;
+}
+
+.account__booking-right {
+    display: flex;
+    align-items: center;
+    width: 440px;
+    justify-content: space-between;
+}
+
+.account__booking-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-right: 35px;
+}
+
+.account__booking-info p{
+    margin-top: 0;
+}
+
+/* ----------------Вход\рег\забыл------------- */
+.modal-registration {
+    height: 500px;
+    padding-top: 0;
+}
+
+.thanks-for {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks-for-form {
+    align-self: center;
+}
+
+.thanks__button {
+ width: auto;
+}
+
+.reg__window {
+    width: 500px;
+}
